@@ -1,6 +1,6 @@
 # 📆ToDoApp
-React_Native ToDoApp
+A React-Native based to do list app
 
 
-- Introduction
+- Introduction : 
 - contributors : 
