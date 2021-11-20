@@ -1,3 +1,4 @@
+//아이콘 버튼 관련 componenet(교수님 파일 그대로 복붙)
 import React from 'react';
 import { Pressable, StyleSheet, View, Image } from 'react-native';
 import {theme} from '../theme';
