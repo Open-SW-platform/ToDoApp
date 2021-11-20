@@ -6,7 +6,7 @@ import HomeScreen from './screens/HomeScreen';
 import AchievementScreen from './screens/AchievementScreen';
 
 const TabNavigator = createBottomTabNavigator({ // TabNavigator로 App.js 통일
-  Home: {
+  'To Do': {
     screen: HomeScreen, //HomeScreen(메인화면)
   },
   Achievement: {
@@ -18,7 +18,7 @@ const TabNavigator = createBottomTabNavigator({ // TabNavigator로 App.js 통일
       tabBarIcon: ({horizontal, tintColor}) => {
        const {routeName} = navigation.state;
        let iconName;
-        if (routeName === 'Home') {
+        if (routeName === 'To Do') {
          iconName = 'checkbox-outline'; //아이콘 이미지파일
         } else if (routeName === 'Achievement') {
          iconName = 'podium-outline';

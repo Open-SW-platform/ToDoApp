@@ -5,7 +5,7 @@ class AchievementScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Settings</Text>
+        <Text>Achievement</Text>
       </View>
     );
   }
