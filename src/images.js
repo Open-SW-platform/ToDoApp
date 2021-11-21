@@ -9,6 +9,7 @@ import Checked from '../assets/checked_box.png';
 import Unchecked from '../assets/unchecked_box.png';
 import Check from '../assets/check.png';
 import Cancle from '../assets/cancle.png'
+import Back from '../assets/back.png'
 
 export const images = {
     menu: Menu,
@@ -21,4 +22,5 @@ export const images = {
     unchecked: Unchecked,
     check : Check,
     cancle :Cancle,
+    back:Back
 };
