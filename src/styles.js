@@ -7,7 +7,7 @@ export const viewStyles = StyleSheet.create({
     backgroundColor: theme.background,
     justifyContent:'flex-start',
   },
-  settingView: { //설정 상단바 스타일
+  settingView: { //설정 하단바 스타일
     flex: 0.5,
     flexDirection: 'row',
     backgroundColor: 'red',
@@ -47,8 +47,13 @@ export const viewStyles = StyleSheet.create({
     justifyContent:'center',
     alignItems: 'flex-end',
     marginRight: 10,
+  },
+  settingBar: { //설정 상단바 스타일
+    flex: 0.1,
+    flexDirection: 'row',
+    backgroundColor: 'red',
+    alignItems: 'center',
   }
-
 });
 
 export const textStyles = StyleSheet.create({ //text관련 설정
@@ -83,7 +88,6 @@ export const barStyles = StyleSheet.create({
 });
 
 export const modalstyles = StyleSheet.create({
-  
   modalView: {
     marginTop: 250,
     justifyContent: 'flex-start',
@@ -121,7 +125,6 @@ export const modalstyles = StyleSheet.create({
   modalText: {
     margin: 10,
     textAlign: 'left',
-  
   },
   top : {
     flexDirection: 'row',
@@ -130,5 +133,6 @@ export const modalstyles = StyleSheet.create({
     alignItems : 'center',
 
   },
- 
+
 });
+
