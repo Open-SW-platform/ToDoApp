@@ -43,6 +43,12 @@ export const viewStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  AddTaskButtonView : {
+    justifyContent:'center',
+    alignItems: 'flex-end',
+    marginRight: 10,
+  }
+
 });
 
 export const textStyles = StyleSheet.create({ //text관련 설정
@@ -74,4 +80,55 @@ export const barStyles = StyleSheet.create({
   statusBar: {
     backgroundColor: theme.background,
   },
+});
+
+export const modalstyles = StyleSheet.create({
+  
+  modalView: {
+    marginTop: 250,
+    justifyContent: 'flex-start',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 0,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    width: '100%',
+    height: '70%',
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+  },
+  buttonOpen: {
+    backgroundColor: '#F194FF',
+  },
+  buttonClose: {
+    backgroundColor: '#2196F3',
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  modalText: {
+    margin: 10,
+    textAlign: 'left',
+  
+  },
+  top : {
+    flexDirection: 'row',
+    backgroundColor: 'yellow',
+    justifyContent : 'flex-end',
+    alignItems : 'center',
+
+  },
+ 
 });

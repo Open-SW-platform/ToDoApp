@@ -19,6 +19,7 @@ const iconStyle = StyleSheet.create({
         width: 27,
         height: 27,
         margin: 5,
+        backgroundColor: 'red',
     },
 });
 
