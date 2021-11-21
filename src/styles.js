@@ -43,6 +43,12 @@ export const viewStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  settingBar: { //설정 상단바 스타일
+    flex: 0.1,
+    flexDirection: 'row',
+    backgroundColor: 'red',
+    alignItems: 'center',
+  }
 });
 
 export const textStyles = StyleSheet.create({ //text관련 설정
