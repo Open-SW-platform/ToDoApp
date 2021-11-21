@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import { StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text,Modal } from 'react-native';
 
-export default class AddTaskButton extends Component {
-    render() {
+const AddTaskButton = (props)=> {
+    
+ 
         return (
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.text}>{this.props.text}</Text>
+            <TouchableOpacity 
+            style={styles.button}
+            onPress={props.onPress}>
+                <Text style={styles.text}>{props.text}</Text>
             </TouchableOpacity>
         );
-    }
+    
 }
 
 const styles = StyleSheet.create({
@@ -44,3 +47,5 @@ const styles = StyleSheet.create({
         color: 'white'
     }
 });
+
+export default AddTaskButton;
