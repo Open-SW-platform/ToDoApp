@@ -43,6 +43,12 @@ export const viewStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  AddTaskButtonView : {
+    justifyContent:'center',
+    alignItems: 'flex-end',
+    marginRight: 10,
+  }
+
 });
 
 export const textStyles = StyleSheet.create({ //text관련 설정

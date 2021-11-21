@@ -5,7 +5,7 @@ import {viewStyles, textStyles, barStyles} from '../styles'
 import { images } from '../images';
 import IconButton from '../components/IconButton';
 import SelectDropdown from 'react-native-select-dropdown';
-
+import AddTaskButton from '../components/AddTaskButton';
 export default function HomeScreen() {
 
   const [newTask, setNewTask] = useState('');
@@ -72,6 +72,11 @@ return (
         <Text style={textStyles.contents}>Do my assignment</Text>
       </View>
       </ScrollView>
+
+      <View style={viewStyles.AddTaskButtonView}>
+      <AddTaskButton text="+"/>
+    </View>
+
     </View>
   </View>
 );
