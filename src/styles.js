@@ -53,6 +53,11 @@ export const viewStyles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: 'red',
     alignItems: 'center',
+  },
+  SearchBar: {
+    flex: 6,
+    flexDirection: 'row',
+    backgroundColor: 'red',
   }
 });
 
