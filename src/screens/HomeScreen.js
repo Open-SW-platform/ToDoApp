@@ -37,7 +37,7 @@ export default function HomeScreen() {
         <View style={viewStyles.SearchBar}>
           <IconButton type={images.search} />
           <TextInput
-            style={{ paddingleft: 10, paddingRight:10, fontSize: 20 }}
+            style={{ paddingLeft: 10, paddingRight:10, fontSize: 20 }}
             placeholder="Searching for ..." />
           <IconButton type={images.cancle} />
         </View>
