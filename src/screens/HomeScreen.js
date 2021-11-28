@@ -14,13 +14,14 @@ import Task from '../components/Task';
 
 export default function HomeScreen() {
   Alert, Modal, StyleSheet, Text, Pressable, View
+  const [addMode, setAddMode] = useState(false);
   const [newTask, setNewTask] = useState(''); // 새 투두리스트 추가 여부
   const [tasks, setTasks] = useState({
     '1': { id: '1', text: "My Todo List", completed: false },
   });
   const [modalVisible, setModalVisible] = useState(false); // 태스크 세부사항창을 띄우고 있는지 여부
   const [themeVisible, setThemeVisible] = useState(false); // theme 변경 창을 띄우고 있는지 여부
-  const [SearchMode, setSearchMode] = useState(false); //삭제모드인지 여부.
+  const [SearchMode, setSearchMode] = useState(false); //검색모드인지 여부
   var TopBar;
 
   const openTheme = () => {
@@ -62,7 +63,6 @@ export default function HomeScreen() {
           <IconButton type={images.dot} />
         </View>
       </View>
-
   }
 
   return (
@@ -106,6 +106,7 @@ export default function HomeScreen() {
           <View style={viewStyles.categoryView}/** Study 카테고리*/>
             <IconButton type={images.tag} />
             <Text style={textStyles.contents}> Study </Text>
+            <IconButton type={images.add} />
           </View>
           <View style={viewStyles.container}/** 투두리스트 항목 */>
             <Input value={newTask}
@@ -121,6 +122,7 @@ export default function HomeScreen() {
           <View style={viewStyles.categoryView}/** Assignment 카테고리*/>
             <IconButton type={images.tag} />
             <Text style={textStyles.contents}> Assignment </Text>
+            <IconButton type={images.add} />
           </View>
           <View style={viewStyles.container}/** 투두리스트 항목 */>
             <Input value={newTask}
@@ -136,6 +138,7 @@ export default function HomeScreen() {
           <View style={viewStyles.categoryView}/** Work 카테고리*/>
             <IconButton type={images.tag} />
             <Text style={textStyles.contents}> Work </Text>
+            <IconButton type={images.add} />
           </View>
           <View style={viewStyles.container}/** 투두리스트 항목 */>
             <Input value={newTask}
@@ -151,6 +154,7 @@ export default function HomeScreen() {
           <View style={viewStyles.categoryView}/** Exercise 카테고리*/>
             <IconButton type={images.tag} />
             <Text style={textStyles.contents}> Exercise </Text>
+            <IconButton type={images.add} />
           </View>
           <View style={viewStyles.container}/** 투두리스트 항목 */>
             <Input value={newTask}
