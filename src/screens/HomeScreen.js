@@ -16,31 +16,32 @@ Alert, Modal, StyleSheet, Text, Pressable, View
   
   const [modalVisible, setModalVisible] = useState(false); // 태스크 세부사항창을 띄우고 있는지 여부
   const [themeVisible, setThemeVisible] = useState(false); // theme 변경 창을 띄우고 있는지 여부
-  const [DeleteMode, setDeleteMode] = useState(false); //삭제모드인지 여부.
+  const [SearchMode, setSearchMode] = useState(false); //삭제모드인지 여부.
   var TopBar;
 
   const openTheme = ()=>{
     setThemeVisible(!themeVisible);
   }
 
-  if (DeleteMode){ //삭제모드라면 -> 상단바부분을 삭제부분으로 변경.
-    TopBar=<View style={viewStyles.settingView} >
-    <IconButton type={images.back}  onPressOut={() => setDeleteMode(!DeleteMode)}/>
-    <Text>  Delete </Text>
-    <View style={viewStyles.settingGroup}>
-      <IconButton type={images.unchecked} />
-      <IconButton type={images.trash} />
-    </View>
-  </View>
+  if (SearchMode) { // 검색모드라면 -> 상단바부분을 검색창으로 변경
+        TopBar = <View style={viewStyles.settingView} >
+            <IconButton type={images.back} onPressOut={() => setSearchMode(!SearchMode)} />
+            <View style={viewStyles.SearchBar}>
+              <IconButton type={images.search} />
+              <TextInput
+                style={{ paddingLeft: 10, paddingRight:10, fontSize: 20 }}
+                placeholder="Searching for ..." />
+              <IconButton type={images.cancle} />
+            </View>
+          </View>
     
   }
-  else { // 삭제모드가 아니라면 -> 일반 상단바 보여줌
+  else { // 검색모드가 아니라면 -> 일반 상단바 보여줌
     TopBar=
     <View style={viewStyles.settingView} > 
       <Today/>
       <View style={viewStyles.settingGroup}>
-        <IconButton type={images.search} />
-       
+        <IconButton type={images.search} onPressOut={() => setSearchMode(!SearchMode)} />
         <IconButton type={images.dot} />
       </View>
     </View>
