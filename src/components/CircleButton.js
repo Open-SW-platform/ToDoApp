@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, TouchableOpacity, Text,Modal } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
-const AddTaskButton = (props)=> {
+const CircleButton = (props)=> {
     
+  console.log(props.color);
  
         return (
             <TouchableOpacity 
-            style={styles.button}
-            onPress={props.onPress}>
-                <Text style={styles.text}>{props.text}</Text>
+            style={[styles.button,{backgroundColor: props.color } ]}
+            onPress={props.onPress}> 
             </TouchableOpacity>
         );
     
@@ -16,7 +16,6 @@ const AddTaskButton = (props)=> {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#2196f3',
         alignItems: 'center',
         justifyContent: 'center',
         width: 70,
@@ -41,11 +40,6 @@ const styles = StyleSheet.create({
         })
     },
 
-    text: {
-        fontSize: 30,
-        textAlign: 'center',
-        color: 'white'
-    }
 });
 
-export default AddTaskButton;
+export default CircleButton;

@@ -4,19 +4,24 @@ import { StatusBar, Text, View, TextInput, ScrollView,Alert, Modal, StyleSheet, 
 import {viewStyles, textStyles, barStyles,modalstyles} from '../styles'
 import { images } from '../images';
 import IconButton from '../components/IconButton';
-import SelectDropdown from 'react-native-select-dropdown';
-import AddTaskButton from '../components/AddTaskButton';
+import CircleButton from '../components/CircleButton';
 import Memo from '../components/Memo';
 import TodolistInput from '../components/TodolistInput';
 import Today from '../components/Today'
+import ThemeSelector from '../components/ThemeSelector';
 
 export default function HomeScreen() {
 Alert, Modal, StyleSheet, Text, Pressable, View
   const [newTask, setNewTask] = useState('');
   
-  const [modalVisible, setModalVisible] = useState(false); // 태스크 추가하는 창을 띄우고 있는지 여부
+  const [modalVisible, setModalVisible] = useState(false); // 태스크 세부사항창을 띄우고 있는지 여부
+  const [themeVisible, setThemeVisible] = useState(false); // theme 변경 창을 띄우고 있는지 여부
   const [DeleteMode, setDeleteMode] = useState(false); //삭제모드인지 여부.
   var TopBar;
+
+  const openTheme = ()=>{
+    setThemeVisible(!themeVisible);
+  }
 
   if (DeleteMode){ //삭제모드라면 -> 상단바부분을 삭제부분으로 변경.
     TopBar=<View style={viewStyles.settingView} >
@@ -46,7 +51,9 @@ return (
   <View style={viewStyles.container}>
     <StatusBar barStyle="light-content" style={barStyles.statusBar} />
     {TopBar} 
-    <Modal // Task 추가할때 띄우는 창. 
+    <ThemeSelector themeVisible={themeVisible} setThemeVisible={setThemeVisible} // 테마선택창
+    /> 
+    <Modal // Task 클릭시 띄우는 세부사항 창. 
         animationType="slide"
         transparent={true}
         visible={modalVisible}
@@ -93,10 +100,12 @@ return (
       </ScrollView>
 
       <View style={viewStyles.AddTaskButtonView}>
-       
-      <AddTaskButton text="+" onPress={() => setModalVisible(true)}  />
-    
+     
+      <CircleButton color='white' onPress={openTheme}  />
+     
     </View>
+
+    
 
      
 

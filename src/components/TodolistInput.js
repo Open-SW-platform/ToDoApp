@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyleSheet, TextInput,View,Text} from 'react-native';
 import {theme} from '../theme';
-import AddTaskButton from '../components/AddTaskButton'
+import CircleButton from './CircleButton'
 const TodolistInput = () => {
     return (
         <View style= {styles.container}> 
-        <AddTaskButton/>
+        <CircleButton/>
         <View style={{backgroundColor:'orange'}}>
         <TextInput 
         style = {styles.textInput}
