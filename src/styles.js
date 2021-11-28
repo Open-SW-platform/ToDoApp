@@ -30,9 +30,7 @@ export const viewStyles = StyleSheet.create({
     flex: 5,
     backgroundColor: 'blue',
   },
-  sortMenuView:{ //드롭다운(sort관련) 버튼 정렬
-    marginLeft: 'auto',
-  },
+
   categoryView:{ //투두리스트 카테고리 스타일
     flexDirection: 'row',
     margin: 10,

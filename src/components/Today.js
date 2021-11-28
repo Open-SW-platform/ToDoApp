@@ -38,7 +38,7 @@ const Today = () => {
     flex: 0.22,
     fontSize : 25,
     backgroundColor: 'yellow',
-    fontWeight : "bold",
+    fontWeight : "900",
     marginLeft :10,
   
   },

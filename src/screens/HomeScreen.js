@@ -1,7 +1,7 @@
 //홈(메인) 화면
 import React, {useState} from 'react';
-import { StatusBar, Text, View, TextInput, ScrollView,Alert, Modal, StyleSheet, Pressable } from 'react-native';
-import {viewStyles, textStyles, barStyles,modalstyles} from '../styles'
+import { StatusBar, Text, View, TextInput, ScrollView, Alert, Modal, StyleSheet, Pressable } from 'react-native';
+import {viewStyles, textStyles, barStyles, modalstyles} from '../styles'
 import { images } from '../images';
 import IconButton from '../components/IconButton';
 import CircleButton from '../components/CircleButton';
@@ -9,11 +9,12 @@ import Memo from '../components/Memo';
 import TodolistInput from '../components/TodolistInput';
 import Today from '../components/Today'
 import ThemeSelector from '../components/ThemeSelector';
+import Input from '../components/Input';
+import Task from '../components/Task';
 
 export default function HomeScreen() {
-Alert, Modal, StyleSheet, Text, Pressable, View
-  const [newTask, setNewTask] = useState('');
-  
+  Alert, Modal, StyleSheet, Text, Pressable, View
+  const [newTask, setNewTask] = useState(''); // 새 투두리스트 추가 여부
   const [modalVisible, setModalVisible] = useState(false); // 태스크 세부사항창을 띄우고 있는지 여부
   const [themeVisible, setThemeVisible] = useState(false); // theme 변경 창을 띄우고 있는지 여부
   const [SearchMode, setSearchMode] = useState(false); //삭제모드인지 여부.
@@ -22,6 +23,15 @@ Alert, Modal, StyleSheet, Text, Pressable, View
   const openTheme = ()=>{
     setThemeVisible(!themeVisible);
   }
+
+  const _addTask = () => {
+    alert('Add: ${newTask}');
+    setNewTask('');
+  };
+
+  const _handleTextChange = text => {
+    setNewTask(text);
+  };
 
   if (SearchMode) { // 검색모드라면 -> 상단바부분을 검색창으로 변경
         TopBar = <View style={viewStyles.settingView} >
@@ -61,7 +71,7 @@ return (
         onRequestClose={() => {
           Alert.alert('Modal has been closed.');
           setModalVisible(!modalVisible);
-          
+
         }}>
       
           <View style={modalstyles.modalView}>
@@ -78,7 +88,6 @@ return (
            </ScrollView>
           </View>
       </Modal>
-    
      
     <View style={viewStyles.goalView}/** 목표 작성부분*/>
       <TextInput
@@ -86,17 +95,20 @@ return (
         placeholder="TODAY'S GOAL" />
     </View>
     <View style={viewStyles.todolistView}>
-      <View style = {viewStyles.sortMenuView}>
-      
-      </View>
       <ScrollView>
       <View style={viewStyles.categoryView}/** 투두리스트 카테고리 - 여기부분 scrollView로 scroll가능*/>
         <IconButton type={images.tag} />
         <Text style={textStyles.contents}> My Category </Text>
       </View>
-      <View style={viewStyles.listView}/** 투두리스트 항목 */>
-        <IconButton type={images.checked} />
-        <Text style={textStyles.contents}>Do my assignment</Text>
+      
+      <View style={viewStyles.container}/** 투두리스트 항목 */>
+        <Input value={newTask} 
+          onChangeText={_handleTextChange}
+          onSubmitEditing={_addTask} />
+          <View>
+            <Task text = "My Todo List 1" />
+            <Task text = "My Todo List 2" />
+          </View>
       </View>
       </ScrollView>
 
