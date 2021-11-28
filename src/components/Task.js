@@ -10,6 +10,7 @@ const Task = ({text}) => {
         <View style = {taskStyle.container}>
             <IconButton type={images.unchecked} />
             <Text style={taskStyle.contents}>{text}</Text>
+            <IconButton type={images.edit} />
         </View>
     )
 }
