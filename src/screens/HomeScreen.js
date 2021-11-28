@@ -15,6 +15,9 @@ import Task from '../components/Task';
 export default function HomeScreen() {
   Alert, Modal, StyleSheet, Text, Pressable, View
   const [newTask, setNewTask] = useState(''); // 새 투두리스트 추가 여부
+  const [tasks, setTasks] = useState({
+    '1': {id: '1', text: "My Todo List", completed: false},
+  });
   const [modalVisible, setModalVisible] = useState(false); // 태스크 세부사항창을 띄우고 있는지 여부
   const [themeVisible, setThemeVisible] = useState(false); // theme 변경 창을 띄우고 있는지 여부
   const [SearchMode, setSearchMode] = useState(false); //삭제모드인지 여부.
@@ -25,8 +28,12 @@ export default function HomeScreen() {
   }
 
   const _addTask = () => {
-    alert('Add: ${newTask}');
+    const ID = Date.now().toString();
+    const newTaskObject = {
+      [ID]:{id: ID, text: newTask, completed: false},
+    };
     setNewTask('');
+    setTasks({...tasks, ...newTaskObject});
   };
 
   const _handleTextChange = text => {
@@ -106,8 +113,9 @@ return (
           onChangeText={_handleTextChange}
           onSubmitEditing={_addTask} />
           <View>
-            <Task text = "My Todo List 1" />
-            <Task text = "My Todo List 2" />
+            {Object.values(tasks).reverse().map(item => ( (
+              <Task key = {item.id} text={item.text} />
+            )))}
           </View>
       </View>
       </ScrollView>
