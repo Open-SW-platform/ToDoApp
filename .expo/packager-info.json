@@ -1,10 +1,10 @@
 {
   "webpackServerPort": null,
-  "expoServerPort": 19001,
-  "devToolsPort": 19003,
-  "packagerPort": 19001,
+  "expoServerPort": 19000,
+  "devToolsPort": 19002,
+  "packagerPort": 19000,
   "packagerPid": null,
   "expoServerNgrokUrl": "https://md-9nz.flowersayo.todoapp.exp.direct",
   "packagerNgrokUrl": "https://packager.md-9nz.flowersayo.todoapp.exp.direct",
-  "ngrokPid": 17772
+  "ngrokPid": 13416
 }
